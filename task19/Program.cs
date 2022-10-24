@@ -7,7 +7,11 @@
 Console.WriteLine("Введите пятизначное число:");
 int userNumber = Convert.ToInt32(Console.ReadLine());
 int copyUserNumber = userNumber;
-if (userNumber > 99999 || userNumber < 10000)
+IsPalindrom(userNumber);
+
+void IsPalindrom(int a)
+{
+if (a > 99999 || a < 10000)
 {
     Console.WriteLine("Число не пятизначное!");
 }
@@ -19,9 +23,9 @@ else
 
     while (count <= 5)
     {
-        remainNumber = userNumber % 10;
+        remainNumber = a % 10;
         numberString = numberString + remainNumber;
-        userNumber = userNumber / 10;
+        a = a / 10;
         count++;
     }
     
@@ -35,4 +39,5 @@ else
     {
         Console.WriteLine("нет");
     }
+}
 }
