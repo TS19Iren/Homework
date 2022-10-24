@@ -15,7 +15,7 @@ void getNumberCubed(int a)
 {
 int count = 1;
 double resultNumber = 0;
-while (count <= userNumber)
+while (count <= a)
 {
     resultNumber = Math.Pow(count, 3);
     Console.WriteLine($"{count} | {resultNumber}");
