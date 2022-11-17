@@ -25,7 +25,9 @@ void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        
         Console.Write("[");
+        
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             if (j < matrix.GetLength(1) - 1)
@@ -33,6 +35,7 @@ void PrintMatrix(int[,] matrix)
             else
                 Console.Write($"{matrix[i, j], 5}");
         }
+        
         Console.WriteLine("]");
     }
 }
@@ -46,6 +49,31 @@ void SearchingForElement(int[,] matrix, int userRows, int userColumns)
         Console.WriteLine("Такого элемента в массиве нет");
     else Console.WriteLine($"Искомый элемент: {matrix[userRows,userColumns]}");
 }
+
+void PrintWithColor(int[,] matrix, int rows, int columns)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        
+        Console.Write("[");
+        
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if(i==rows&&j==columns) 
+            {
+                Console.ForegroundColor=ConsoleColor.Cyan;
+                Console.Write($"{matrix[i, j], 5}");
+                Console.ResetColor();
+            }
+            else Console.Write($"{matrix[i, j], 5}");
+            
+        }
+        
+        Console.WriteLine("]");
+    }
+}
+
+
 int[,] matrixRnd = CreateMatrixRndInt(4, 4, -10, 10);
 PrintMatrix(matrixRnd);
 Console.WriteLine("Укажите строку элемента: ");
@@ -53,3 +81,4 @@ int userRows = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Укажите столбец элемента: ");
 int userColumns = Convert.ToInt32(Console.ReadLine());
 SearchingForElement(matrixRnd,userRows,userColumns);
+PrintWithColor(matrixRnd,userRows,userColumns);
