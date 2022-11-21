@@ -46,7 +46,13 @@ int[,] ReplaceRowsColumns(int[,] matrix)
 
 int[,] matrixRnd = CreateMatrixRndInt(4, 4, -10, 10);
 PrintMatrix(matrixRnd);
-Console.WriteLine("Новый массив:");
+if (matrixRnd.GetLength(0)==matrixRnd.GetLength(1))
+{
+    Console.WriteLine("Новый массив:");
 int[,] matrixResult = ReplaceRowsColumns(matrixRnd);
 PrintMatrix(matrixResult);
+}
+else (Console.WriteLine("Невозможно выполнить операцию"));
+
+
 
