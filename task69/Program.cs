@@ -11,7 +11,7 @@ int numB = Convert.ToInt32(Console.ReadLine());
 int Involution(int a, int b)
 {
     
-    int inv = a;
+    int inv = 1;
     if(b==1) return inv;
     else
     {
