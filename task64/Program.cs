@@ -12,7 +12,12 @@ void ElementsFromMaxToMin(int number)
 {
     if (number == 0)
         return;
-    Console.Write($"{number} ");
+    if(number!=1)
+    {
+        Console.Write($"{number}, ");
+    
+    }
+    else Console.Write($"{number}");
     ElementsFromMaxToMin(number - 1);
 }
 
